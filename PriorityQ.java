@@ -29,7 +29,7 @@ class PriorityQ
 			{
                             double y = item.getFrequency();
                             double k = queArray[j].getFrequency(); 
-                            if(y < k)
+                            if(y > k)
                                 //if(item.getFrequency() > queArray[j]) // if new item larger,
                                 
                                 
@@ -59,15 +59,5 @@ class PriorityQ
     int getNItems()
     {
         return nItems;
-    }
-
-    
-
-   
-
-    
-
-    
+    }   
 } // end class PriorityQ
-////////////////////////////////////////////////////////////////
-
