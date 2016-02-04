@@ -8,8 +8,8 @@ import java.util.*; // for Stack class
 class Tree
 {
 	 Node root; // first node of tree
-    Tree leftChild;
-    Tree rightChild;
+   // Tree leftChild;
+    //Tree rightChild;
 	// -------------------------------------------------------------
 	public Tree() // constructor
 	{ 
@@ -223,6 +223,9 @@ class Tree
 				if(temp != null)
 				{
 					System.out.print(temp.iData);
+                                        //.out.print((char)65);
+                                        
+                                        System.out.print((char)(int)temp.dData);
 					localStack.push(temp.leftChild);
 					localStack.push(temp.rightChild);
 					if(temp.leftChild != null ||
@@ -250,7 +253,12 @@ class Tree
 
     double getFrequency() 
     {
-        return root.dData;
+        return root.iData;
+    }
+    public void depthFirst(Node n, String buildingString){
+        //if both children are null, quit
+        depthFirst(n.leftChild,buildingString+"0");
+        depthFirst(rightChild,buildingString+"1");
     }
     
 //    Tree getFrequency() 
