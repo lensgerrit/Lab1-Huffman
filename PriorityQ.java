@@ -28,8 +28,8 @@ class PriorityQ
 			for(j=nItems-1; j>=0; j--) // start at end,
 			{
                             double y = item.getFrequency();
-                             double k = queArray[j].getFrequency(); 
-                             if(y > k)
+                            double k = queArray[j].getFrequency(); 
+                            if(y < k)
                                 //if(item.getFrequency() > queArray[j]) // if new item larger,
                                 
                                 
