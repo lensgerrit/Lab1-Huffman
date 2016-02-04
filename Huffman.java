@@ -41,7 +41,7 @@ public class Huffman {
 
     void code() 
     {
-        
+       huffTree.depthFirst(localRoot, input);
     }
 
     void decode() 
@@ -101,19 +101,19 @@ public class Huffman {
         
         while(theQ.getNItems() > 1)        
         {
-            System.out.println(theQ.remove().getFrequency());
-//           // Node root1 = new Node();
-//            Tree a = theQ.remove();
-//            Tree b = theQ.remove();
-//            Tree n = new Tree(); // char = +, add frequency
-//            n.insert(a.root.iData + b.root.iData, '+');
-//            //System.out.println(a.root.iData + ":" + b.root.iData);
-//     //       n.insert(, maxSize);
-//            //n.root.iData = a.root.iData + b.root.iData;
-//            // n.root.dData = '+';
-//            n.root.leftChild = a.root;
-//            n.root.rightChild = b.root;
-//            theQ.insert(n);
+            //System.out.println(theQ.remove().getFrequency());
+            Node root1 = new Node();
+            Tree a = theQ.remove();
+            Tree b = theQ.remove();
+            Tree n = new Tree(); // char = +, add frequency
+            n.insert(a.root.iData + b.root.iData, '+');
+            //System.out.println(a.root.iData + ":" + b.root.iData);
+     //       n.insert(, maxSize);
+            //n.root.iData = a.root.iData + b.root.iData;
+            // n.root.dData = '+';
+            n.root.leftChild = a.root;
+            n.root.rightChild = b.root;
+            theQ.insert(n);
         }
         
         huffTree = theQ.remove(); //if we remove the tree form the Q, it will be the only tree and our huff tree
