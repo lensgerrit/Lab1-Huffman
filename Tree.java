@@ -8,6 +8,7 @@ import java.util.*; // for Stack class
 class Tree
 {
 	 Node root; // first node of tree
+         String[] encodedList = new String[28];
    // Tree leftChild;
     //Tree rightChild;
 	// -------------------------------------------------------------
@@ -257,13 +258,20 @@ class Tree
     }
     public void depthFirst(Node n, String buildingString){
         //if both children are null, quit
+        if(n.leftChild==null && n.rightChild==null){
+           encodedList[(int)(n.dData)-65]= buildingString;      
+        }
+        else{
         depthFirst(n.leftChild,buildingString+"0");
-        depthFirst(rightChild,buildingString+"1");
+        depthFirst(n.rightChild,buildingString+"1");
+    }
     }
     
 //    Tree getFrequency() 
 //    {
 //        return root;
 //    }
+
+   
 } // end class Tree
 ////////////////////////////////////////////////////////////////
