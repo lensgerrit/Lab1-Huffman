@@ -19,4 +19,4 @@ class PriorityQApp
 		System.out.println("");
 	} // end main()
 	//-------------------------------------------------------------
-} // end clas
+} // end class PriorityQApp
