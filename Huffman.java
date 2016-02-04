@@ -25,13 +25,13 @@ public class Huffman {
     {
         freqTable = new int[maxSize]; 
         input = str;
-        for(int i = 0; i < maxSize; i++)
-        {
-            freqTable[i] = 0;
+        //for(int i = 0; i < maxSize; i++)
+        //{
+            //freqTable[] = 0;
             makeFreqTable();
             queueTree();
             makeHuffmanTree(); //huffTree Variable will be initialized here
-        }
+        //}
     }
 
     void displayTree() 
@@ -76,34 +76,44 @@ public class Huffman {
         {
             System.out.print(freqTable[j] + " ");
         }
+        System.out.println("\n");
     }
-    //hello world!
+    
     void queueTree()
     {
         //insert array into priorityQ
-       theQ = new PriorityQ(28);
+       theQ = new PriorityQ(maxSize);
        
        for(int i = 0; i < freqTable.length; i++)
        {
-          Tree temp = new Tree();
-          temp.insert(freqTable[i], i);
-          theQ.insert(temp);
+           if(freqTable[i] >0)
+           {
+                Tree temp = new Tree();
+                temp.insert(freqTable[i], i+65);
+                theQ.insert(temp);
+           }
        }
         
     }
     
     void makeHuffmanTree()
     {
+        
         while(theQ.getNItems() > 1)        
         {
-            Tree a = theQ.remove();
-            Tree b = theQ.remove();
-            Tree n = new Tree(); // char = +, add frequency
-            n.root.iData = a.root.iData + b.root.iData;
-            n.root.dData = '+';
-            n.leftChild = a;
-            n.rightChild = b;
-            theQ.insert(n);
+            System.out.println(theQ.remove().getFrequency());
+//           // Node root1 = new Node();
+//            Tree a = theQ.remove();
+//            Tree b = theQ.remove();
+//            Tree n = new Tree(); // char = +, add frequency
+//            n.insert(a.root.iData + b.root.iData, '+');
+//            //System.out.println(a.root.iData + ":" + b.root.iData);
+//     //       n.insert(, maxSize);
+//            //n.root.iData = a.root.iData + b.root.iData;
+//            // n.root.dData = '+';
+//            n.root.leftChild = a.root;
+//            n.root.rightChild = b.root;
+//            theQ.insert(n);
         }
         
         huffTree = theQ.remove(); //if we remove the tree form the Q, it will be the only tree and our huff tree
