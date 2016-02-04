@@ -77,7 +77,7 @@ public class Huffman {
             System.out.print(freqTable[j] + " ");
         }
     }
-    
+    //hello world!
     void queueTree()
     {
         //insert array into priorityQ
