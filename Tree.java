@@ -1,3 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package huffmanlab1;
+
 // tree.java
 // demonstrates binary tree
 // to run this program: C>java TreeApp
@@ -7,6 +14,7 @@ import java.util.*; // for Stack class
 
 class Tree
 {
+       
 	 Node root; // first node of tree
          String[] encodedList = new String[28];
    // Tree leftChild;
@@ -252,26 +260,39 @@ class Tree
 	} // end displayTree()
 	// -------------------------------------------------------------
 
-    double getFrequency() 
+    public double getFrequency() 
     {
         return root.iData;
     }
     public void depthFirst(Node n, String buildingString){
         //if both children are null, quit
-        if(n.leftChild==null && n.rightChild==null){
+        
+        while(n!=null){
+        
+        if(n.leftChild==null && n.rightChild==null)
+        {
            encodedList[(int)(n.dData)-65]= buildingString;      
         }
-        else{
+        else
+        {
+        
         depthFirst(n.leftChild,buildingString+"0");
         depthFirst(n.rightChild,buildingString+"1");
+        
+        }
+        
+        
+        }
     }
-    }
+
     
 //    Tree getFrequency() 
 //    {
 //        return root;
 //    }
 
-   
+    
+
+    
 } // end class Tree
 ////////////////////////////////////////////////////////////////
